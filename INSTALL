@@ -1,0 +1,2 @@
+make sure that gtk2 and gtk2-devel packages are present, compile your vim with following:
+./configure --enable-gui=gtk2 --with-features=huge
