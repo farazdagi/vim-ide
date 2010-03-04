@@ -120,6 +120,21 @@ set gcr=a:blinkwait0,a:block-cursor
 " MAPPINGS
 "
 
+" Easy tab navigation
+map tl :tabnext<CR>
+map th :tabprevious<CR>
+map tn :tabnew<CR>
+map td :tabclose<CR>
+
+" F2 allow to utilize screen
+map <F2> :!screen -x cli<CR>
+imap <F2> <ESC>:!screen -x cli<CR>
+vmap <F2> <ESC><ESC>:!screen -x cli<CR>
+
+" F3 search lines with FuzzyFinder
+map <F3> :FufLine<CR>
+imap <F3> <ESC>:FufLine<CR>
+vmap <F3> <ESC><ESC>:FufLine<CR>
 
 " F7 see list of open buffers
 map <F8> :BufExplorer<CR>
