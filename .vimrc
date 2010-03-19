@@ -16,11 +16,17 @@ colorscheme wombat
 " GLOBAL SETTINGS
 "
 
+" Make sure that unrecognized files are still indented
+set autoindent
+
 " Write contents of the file, if it has been modified, on buffer exit
 set autowrite
 
 " Allow backspacing over everything
 set backspace=indent,eol,start
+
+" Highlight current line - allows you to track cursor position more easily
+set cursorline
 
 " Insert mode completion options
 set completeopt=menu,longest,preview
@@ -117,6 +123,34 @@ let g:netrw_browse_split = 1
 set gcr=a:blinkwait0,a:block-cursor
 
 "
+" Plugins tuning
+"
+
+" Project
+let g:proj_flags="FisLt"
+let g:proj_window_width = 40
+" SnippetEmu
+" let g:snippetsEmu_key = "<C-j>"
+" dbext
+let g:dbext_default_profile_mySQL = 'type=MYSQL:integratedlogin=1:dbname=mysql:user=root:passwd=a:host=localhost'
+let g:dbext_default_profile = 'mySQL' 
+
+"
+" Folding
+"
+
+"
+" Autocommands
+"
+" MWOP Suggestion
+"run file with PHP CLI (CTRL-M)
+":autocmd FileType php noremap <C-M> :w!<CR>:!$HOME/bin/php %<CR>
+" " PHP parser check (CTRL-L)
+autocmd FileType php noremap <C-L> :!$HOME/bin/php -l %<CR>
+" start vim with NERDTree enabled
+autocmd VimEnter * NERDTree
+
+"
 " MAPPINGS
 "
 
@@ -125,6 +159,11 @@ map tl :tabnext<CR>
 map th :tabprevious<CR>
 map tn :tabnew<CR>
 map td :tabclose<CR>
+
+" Do not bother too much with ESC key
+map! 33 <ESC>
+vmap 33 <ESC>
+
 
 " F2 allow to utilize screen
 map <F2> :!screen -x cli<CR>
@@ -135,6 +174,10 @@ vmap <F2> <ESC><ESC>:!screen -x cli<CR>
 map <F3> :FufLine<CR>
 imap <F3> <ESC>:FufLine<CR>
 vmap <F3> <ESC><ESC>:FufLine<CR>
+
+map <F5> :!phpunit %<CR>
+imap <F5> :!phpunit %<CR>
+vmap <F5> :!phpunit %<CR>
 
 " F7 see list of open buffers
 map <F8> :BufExplorer<CR>
@@ -160,12 +203,33 @@ nmap <F11>  :TrinityToggleNERDTree<CR>
 " Open and close all the three plugins on the same time 
 nmap <F12>  :TrinityToggleAll<CR> 
 
+" Ability to open tag'ed document as vertical split
+" or a new tab
+map <C-\> :tab split<CR>:exec("tag ".expand("<cword>"))<CR>
+"map <A-]> :vsp <CR>:exec("tag ".expand("<cword>"))<CR>
+
+
+" Allow to copy/paste between VIM instances
+vmap <silent> ,y y:new<CR>:call setline(1,getregtype())<CR>o<Esc>P:wq! ~/reg.txt<CR>
+nmap <silent> ,y :new<CR>:call setline(1,getregtype())<CR>o<Esc>P:wq! ~/reg.txt<CR>
+map <silent> ,p :sview ~/reg.txt<CR>"zdddG:q!<CR>:call setreg('"', @", @z)<CR>p
+map <silent> ,P :sview ~/reg.txt<CR>"zdddG:q!<CR>:call setreg('"', @", @z)<CR>P
+
 " save changes
 map ,s :w<CR>
-" exit vim without saving any changes
-map ,q :q!<CR>
-" exit vim saving changes
-map ,w :x<CR>
+imap ,s <ESC>:w<CR>
+vmap ,s <ESC><ESC>:w<CR>
+" Locate file in hierarchy quickly
+map ,t :NERDTree %<CR>
+" change the directory to the current file I'm working on
+" plays nicely with NERDTree - when file opened
+map ,cd :cd %:p:h
+" close buffer using bclose plugin (window is not closed)
+map ,w :Bclose<CR>
+map ,diff :call Svndiff('next')<CR>
+imap ,diff <ESC>:call Svndiff('next')<CR>
+map ,diffc :call Svndiff('clear')<CR>
+imap ,diffc <ESC>:call Svndiff('clear')<CR>
 " switch to upper/lower window quickly
 map <C-J> <C-W>j
 map <C-K> <C-W>k
@@ -182,7 +246,7 @@ nmap ,f [I:let nr = input("Which one: ")<Bar>exe "normal " . nr ."[\t"<CR>
 " use <F6> to toggle line numbers
 nmap <silent> <F6> :set number!<CR>
 " page down with <Space>
-nmap <Space> <PageDown>
+" nmap <Space> <PageDown>
 " open filename under cursor in a new window (use current file's working
 " directory) 
 nmap gf :new %:p:h/<cfile><CR>
