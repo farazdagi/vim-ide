@@ -85,6 +85,9 @@ set tabstop=4
 " Expand tabs to spaces
 set expandtab
 
+" Wrap text after hitting the 120-char length
+set textwidth=120
+
 " Write swap file to disk after every 50 characters
 set updatecount=50
 
@@ -138,6 +141,7 @@ let g:dbext_default_profile = 'mySQL'
 "
 " Folding
 "
+let g:php_folding = 2
 
 "
 " Autocommands
