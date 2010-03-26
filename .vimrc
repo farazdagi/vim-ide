@@ -12,6 +12,9 @@ syntax on
 " default color scheme
 colorscheme wombat
 
+" enable 256 colors in screen
+set t_Co=256
+
 "
 " GLOBAL SETTINGS
 "
