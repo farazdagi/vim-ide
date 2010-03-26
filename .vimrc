@@ -145,7 +145,7 @@ let g:dbext_default_profile = 'mySQL'
 " Folding
 "
 let g:php_folding = 2
-
+set foldlevel=5
 "
 " Autocommands
 "
