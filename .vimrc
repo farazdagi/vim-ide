@@ -15,6 +15,9 @@ colorscheme wombat
 " enable 256 colors in screen
 set t_Co=256
 
+" make sure that mouse is enabled
+set mouse=a
+
 "
 " GLOBAL SETTINGS
 "
@@ -128,6 +131,11 @@ let g:netrw_browse_split = 1
 " Make sure cursor is not blinking
 set gcr=a:blinkwait0,a:block-cursor
 
+" 
+" Tags
+"
+set tags+=$HOME/.vim/tags/python2.ctags
+
 "
 " Plugins tuning
 "
@@ -156,6 +164,7 @@ set foldlevel=5
 autocmd FileType php noremap <C-L> :!$HOME/bin/php -l %<CR>
 " start vim with NERDTree enabled
 autocmd VimEnter * NERDTree
+autocmd FileType python set omnifunc=pythoncomplete#Complete
 
 "
 " MAPPINGS
@@ -182,10 +191,14 @@ map <F3> :FufLine<CR>
 imap <F3> <ESC>:FufLine<CR>
 vmap <F3> <ESC><ESC>:FufLine<CR>
 
-map <F5> :!phpunit %<CR>
-imap <F5> :!phpunit %<CR>
-vmap <F5> :!phpunit %<CR>
+"map <F5> :!phpunit %<CR>
+"imap <F5> :!phpunit %<CR>
+"vmap <F5> :!phpunit %<CR>
 
+autocmd FileType php noremap <F5> <ESC>:!phpunit %<CR>
+autocmd FileType python noremap <F5> <ESC>:!python %<CR>
+
+" start vim with NERDTree enabled
 " F7 see list of open buffers
 map <F8> :BufExplorer<CR>
 imap <F8> <ESC>:BufExplorer<CR>
