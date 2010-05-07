@@ -435,10 +435,10 @@ let s:tlist_def_pascal_settings = 'pascal;f:function;p:procedure'
 let s:tlist_def_perl_settings = 'perl;c:constant;l:label;p:package;s:subroutine'
 
 " php language
-let s:tlist_def_php_settings = 'php;c:class;d:constant;v:variable;f:function'
+let s:tlist_def_php_settings = 'php;c:class;f:function'
 
 " python language
-let s:tlist_def_python_settings = 'python;c:class;m:member;f:function'
+let s:tlist_def_python_settings = 'python;c:class;f:function;m:member'
 
 " rexx language
 let s:tlist_def_rexx_settings = 'rexx;s:subroutine'
