@@ -59,7 +59,7 @@ set hlsearch
 set nrformats=octal,hex,alpha
 
 " Use F10 to toggle 'paste' mode
-set pastetoggle=<F10>
+set pastetoggle=<F4>
 
 " Show line, column number, and relative position within a file in the status line
 set ruler
