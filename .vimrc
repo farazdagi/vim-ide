@@ -26,7 +26,11 @@ set mouse=a
 set autoindent
 
 " Write contents of the file, if it has been modified, on buffer exit
-set autowrite
+" set autowrite
+
+" Allow buffer to go into background - w/o losing the undo history and
+" w/o prior saving
+set hidden
 
 " Allow backspacing over everything
 set backspace=indent,eol,start
@@ -35,7 +39,7 @@ set backspace=indent,eol,start
 set cursorline
 
 " Insert mode completion options
-set completeopt=menu,longest,preview
+set completeopt=longest,menuone
 
 " Use UTF-8 as the default buffer encoding
 set enc=utf-8
@@ -46,19 +50,26 @@ set history=100
 " Enable incremental search
 set incsearch
 
+" Highlight results of a search
+set hlsearch
+
+" Ignore case when searching
+set ignorecase
+
+" Ignore case only if seach string is all lowercase
+set smartcase
+
 " Always show status line, even for one window
 set laststatus=2
 
 " Jump to matching bracket for 2/10th of a second (works with showmatch)
 set matchtime=2
 
-" Highlight results of a search
-set hlsearch
 
 " Enable CTRL-A/CTRL-X to work on octal and hex numbers, as well as characters
 set nrformats=octal,hex,alpha
 
-" Use F10 to toggle 'paste' mode
+" Use F4 to toggle 'paste' mode
 set pastetoggle=<F4>
 
 " Show line, column number, and relative position within a file in the status line
@@ -68,7 +79,7 @@ set ruler
 set number
 
 " Scroll when cursor gets within 3 characters of top/bottom edge
-set scrolloff=3
+set scrolloff=10
 
 " Round indent to multiple of 'shiftwidth' for > and < commands
 set shiftround
@@ -150,6 +161,11 @@ let g:dbext_default_profile_mySQL = 'type=MYSQL:integratedlogin=1:dbname=mysql:u
 let g:dbext_default_profile = 'mySQL' 
 
 "
+" Supertab
+"
+let g:SuperTabDefaultCompletionType = "context"
+
+"
 " Folding
 "
 let g:php_folding = 2
@@ -170,6 +186,9 @@ autocmd FileType python set omnifunc=pythoncomplete#Complete
 " MAPPINGS
 "
 
+" Set the <Leader> for combo commands
+let mapleader = ","
+
 " Easy tab navigation
 map tl :tabnext<CR>
 map th :tabprevious<CR>
@@ -180,6 +199,13 @@ map td :tabclose<CR>
 map! 33 <ESC>
 vmap 33 <ESC>
 
+" Allows you to enter sudo pass and save the file
+" when you forgot to open your file with sudo
+cmap w!! %!sudo tee > /dev/null %
+
+" Auto-complete - more smart menu see: http://bit.ly/d1ILFI
+inoremap <expr> <CR> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
+inoremap <expr> <C-n> pumvisible() ? '<C-n>' : '<C-n><C-r>=pumvisible() ? "\<lt>Down>" : ""<CR>'
 
 " F2 allow to utilize screen
 map <F2> :!screen -x cli<CR>
@@ -191,11 +217,9 @@ map <F3> :FufLine<CR>
 imap <F3> <ESC>:FufLine<CR>
 vmap <F3> <ESC><ESC>:FufLine<CR>
 
-"map <F5> :!phpunit %<CR>
-"imap <F5> :!phpunit %<CR>
-"vmap <F5> :!phpunit %<CR>
 
-autocmd FileType php noremap <F5> <ESC>:!phpunit %<CR>
+autocmd FileType php noremap <C-F5> <ESC>:!phpunit %<CR>
+autocmd FileType php noremap <F5> <ESC>:!php -f %<CR>
 autocmd FileType python noremap <F5> <ESC>:!python %<CR>
 
 " start vim with NERDTree enabled
@@ -251,8 +275,8 @@ imap ,diff <ESC>:call Svndiff('next')<CR>
 map ,diffc :call Svndiff('clear')<CR>
 imap ,diffc <ESC>:call Svndiff('clear')<CR>
 " switch to upper/lower window quickly
-map <C-J> <C-W>j
-map <C-K> <C-W>k
+map <C-J> <C-E>
+map <C-K> <C-Y>
 " resize window
 map <silent> <A-j> <C-W>-
 map <silent> <A-k> <C-W>+
@@ -276,6 +300,8 @@ nnoremap <Esc>p  p'[v']=
 " visual shifting (does not exit Visual mode)
 vnoremap < <gv
 vnoremap > >gv 
+" turn off search highlighting
+nmap <silent> <Leader>n :silent :nohlsearch<CR>
 
 " Generic highlight changes
 "highlight Comment cterm=none ctermfg=Gray
@@ -287,5 +313,3 @@ vnoremap > >gv
 "highlight treeCWD cterm=none ctermfg=DarkYellow
 "highlight netrwDir cterm=none ctermfg=Cyan
 
-" Set the <Leader> for combo commands
-let mapleader = ","
