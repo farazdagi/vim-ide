@@ -55,6 +55,9 @@
 "     $ vim -u NONE -U NONE -c "set nocp | runtime plugin/supertab.vim"
 " }}}
 
+if exists("g:SuperTabTurnThisStupidThingOff")
+    finish
+endif
 if v:version < 700
   finish
 endif

@@ -163,7 +163,9 @@ let g:dbext_default_profile = 'mySQL'
 "
 " Supertab
 "
-let g:SuperTabDefaultCompletionType = "context"
+let g:SuperTabDefaultCompletionType = "user"
+" for time being turn it off - till I finally find how it might be useful
+let g:SuperTabTurnThisStupidThingOff = "yes, please, please, please!!!!"
 
 "
 " Folding
@@ -204,8 +206,8 @@ vmap 33 <ESC>
 cmap w!! %!sudo tee > /dev/null %
 
 " Auto-complete - more smart menu see: http://bit.ly/d1ILFI
-inoremap <expr> <CR> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
-inoremap <expr> <C-n> pumvisible() ? '<C-n>' : '<C-n><C-r>=pumvisible() ? "\<lt>Down>" : ""<CR>'
+"inoremap <expr> <CR> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
+"inoremap <expr> <C-n> pumvisible() ? '<C-n>' : '<C-n><C-r>=pumvisible() ? "\<lt>Down>" : ""<CR>'
 
 " F2 allow to utilize screen
 map <F2> :!screen -x cli<CR>
