@@ -161,13 +161,6 @@ let g:dbext_default_profile_mySQL = 'type=MYSQL:integratedlogin=1:dbname=mysql:u
 let g:dbext_default_profile = 'mySQL' 
 
 "
-" Supertab
-"
-let g:SuperTabDefaultCompletionType = "user"
-" for time being turn it off - till I finally find how it might be useful
-let g:SuperTabTurnThisStupidThingOff = "yes, please, please, please!!!!"
-
-"
 " Folding
 "
 let g:php_folding = 2
