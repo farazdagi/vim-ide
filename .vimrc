@@ -151,6 +151,9 @@ set tags+=$HOME/.vim/tags/python2.ctags
 " Plugins tuning
 "
 
+" Nert Tree
+let NERDTreeIgnore=['\.pyc$']
+
 " Project
 let g:proj_flags="FisLt"
 let g:proj_window_width = 40
