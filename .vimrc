@@ -151,7 +151,7 @@ set foldlevel=5
 "
 " MWOP Suggestion
 "run file with PHP CLI (CTRL-M)
-":autocmd FileType php noremap <C-M> :w!<CR>:!$HOME/bin/php %<CR>
+:autocmd FileType php noremap <C-M> :w!<CR>:!$HOME/bin/php %<CR>
 " " PHP parser check (CTRL-L)
 autocmd FileType php noremap <C-L> :!$HOME/bin/php -l %<CR>
 " start vim with NERDTree enabled
