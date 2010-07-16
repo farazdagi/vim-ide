@@ -231,9 +231,6 @@ map <F7> :MarksBrowser<CR>
 imap <F7> <ESC>:MarksBrowser<CR>
 vmap <F7> <ESC>:MarksBrowser<CR>
 
-" " Open and close the srcexpl.vim separately 
-nmap <F9>   :TrinityToggleSourceExplorer<CR> 
-
 " " Open and close the taglist.vim separately 
 map <F10> :TrinityToggleTagList<CR>
 imap <F10> <ESC>:TrinityToggleTagList<CR>
