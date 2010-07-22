@@ -227,18 +227,15 @@ autocmd FileType php noremap <F5> <ESC>:!php -f %<CR>
 autocmd FileType python noremap <F5> <ESC>:!python %<CR>
 
 " start vim with NERDTree enabled
-" F7 see list of open buffers
-map <F8> :BufExplorer<CR>
-imap <F8> <ESC>:BufExplorer<CR>
-vmap <F8> <ESC>:BufExplorer<CR>
+" F1-F12 Keys are reserved on Macs so avoid using them
+map <Leader>l :BufExplorer<CR>
+imap <Leader>l <ESC>:BufExplorer<CR>
+vmap <Leader>l <ESC>:BufExplorer<CR>
 
 " F8 See List of Bookmarks
 map <F7> :MarksBrowser<CR>
 imap <F7> <ESC>:MarksBrowser<CR>
 vmap <F7> <ESC>:MarksBrowser<CR>
-
-" " Open and close the srcexpl.vim separately 
-nmap <F9>   :TrinityToggleSourceExplorer<CR> 
 
 " " Open and close the taglist.vim separately 
 map <F10> :TrinityToggleTagList<CR>
