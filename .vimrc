@@ -142,6 +142,12 @@ let g:netrw_browse_split = 1
 " Make sure cursor is not blinking
 set gcr=a:blinkwait0,a:block-cursor
 
+" TeX/LaTeX support (via vim-latex-suite)
+filetype plugin on
+set grepprg=grep\ -nH\ $*
+filetype indent on
+let g:tex_flavor='latex'
+
 " 
 " Tags
 "
