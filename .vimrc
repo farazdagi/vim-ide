@@ -13,7 +13,7 @@ syntax on
 colorscheme wombat
 
 " enable 256 colors in screen
-set t_Co=256
+"set t_Co=256
 
 " make sure that mouse is enabled
 set mouse=a
