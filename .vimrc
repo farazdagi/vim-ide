@@ -142,6 +142,12 @@ let g:netrw_browse_split = 1
 " Make sure cursor is not blinking
 set gcr=a:blinkwait0,a:block-cursor
 
+" TeX/LaTeX support (via vim-latex-suite)
+filetype plugin on
+set grepprg=grep\ -nH\ $*
+filetype indent on
+let g:tex_flavor='latex'
+
 " 
 " Tags
 "
@@ -219,6 +225,7 @@ vmap <F3> <ESC><ESC>:FufLine<CR>
 autocmd FileType php noremap <C-F5> <ESC>:!phpunit %<CR>
 autocmd FileType php noremap <F5> <ESC>:!php -f %<CR>
 autocmd FileType python noremap <F5> <ESC>:!python %<CR>
+autocmd FileType javascript noremap <F5> <ESC>:!js -strict -w -f %<CR>
 
 " start vim with NERDTree enabled
 " F1-F12 Keys are reserved on Macs so avoid using them
