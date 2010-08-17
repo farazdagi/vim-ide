@@ -15,6 +15,10 @@ colorscheme foursee
 " make sure that ZF standards for maximum line height are honoured
 set colorcolumn=80,120
 
+" enable new 7.3 persistent undo feature
+set undofile
+set undodir=/tmp
+
 " enable 256 colors in screen
 "set t_Co=256
 
