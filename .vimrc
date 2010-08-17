@@ -9,8 +9,11 @@ filetype indent on
 " Turn syntax highlighting on
 syntax on
 
-" default color scheme
-colorscheme wombat
+" default color scheme (based on wombat)
+colorscheme foursee
+
+" make sure that ZF standards for maximum line height are honoured
+set colorcolumn=80,120
 
 " enable 256 colors in screen
 "set t_Co=256
