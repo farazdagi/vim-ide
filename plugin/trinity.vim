@@ -149,7 +149,7 @@ endfunction " }}}
 function! <SID>Trinity_InitNERDTree()
 
     " Set the window width
-    let g:NERDTreeWinSize = 40
+    let g:NERDTreeWinSize = 35
     " Set the window position
     let g:NERDTreeWinPos = "left"
     " Auto centre

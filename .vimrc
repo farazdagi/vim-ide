@@ -167,33 +167,32 @@ set tags+=$HOME/.vim/tags/python2.ctags
 " Plugins tuning
 "
 
-" Nert Tree
+" NERDTree
 let NERDTreeIgnore=['\.pyc$']
+let NERDTreeWinSize = 35
+" Make sure that when NT root is changed, Vim's pwd is also updated
+let NERDTreeChDirMode = 2
+let NERDTreeShowLineNumbers = 1
+" Open NERDTree on startup
+au VimEnter * NERDTree
 
 " Project
 let g:proj_flags="FisLt"
 let g:proj_window_width = 40
 " SnippetEmu
 " let g:snippetsEmu_key = "<C-j>"
-" dbext
-let g:dbext_default_profile_mySQL = 'type=MYSQL:integratedlogin=1:dbname=mysql:user=root:passwd=a:host=localhost'
-let g:dbext_default_profile = 'mySQL' 
 
 "
 " Folding
 "
 let g:php_folding = 2
 set foldlevel=5
-"
-" Autocommands
-"
+
 " MWOP Suggestion
 "run file with PHP CLI (CTRL-M)
-:autocmd FileType php noremap <C-M> :w!<CR>:!$HOME/bin/php %<CR>
+autocmd FileType php noremap <C-M> :w!<CR>:!$HOME/bin/php %<CR>
 " " PHP parser check (CTRL-L)
 autocmd FileType php noremap <C-L> :!$HOME/bin/php -l %<CR>
-" start vim with NERDTree enabled
-autocmd VimEnter * NERDTree
 autocmd FileType python set omnifunc=pythoncomplete#Complete
 
 "
