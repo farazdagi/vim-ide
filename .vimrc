@@ -220,6 +220,10 @@ cmap w!! %!sudo tee > /dev/null %
 "inoremap <expr> <CR> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
 "inoremap <expr> <C-n> pumvisible() ? '<C-n>' : '<C-n><C-r>=pumvisible() ? "\<lt>Down>" : ""<CR>'
 
+" easy way to edit reload .vimrc
+nmap <Leader>vrr :source $MYVIMRC<CR>
+nmap <Leader>vr :e $MYVIMRC<CR>
+
 " F2 allow to utilize screen
 map <F2> :!screen -x cli<CR>
 imap <F2> <ESC>:!screen -x cli<CR>
@@ -311,14 +315,4 @@ vnoremap < <gv
 vnoremap > >gv 
 " turn off search highlighting
 nmap <silent> <Leader>n :silent :nohlsearch<CR>
-
-" Generic highlight changes
-"highlight Comment cterm=none ctermfg=Gray
-"highlight IncSearch cterm=none ctermfg=Black ctermbg=DarkYellow
-"highlight Search cterm=none ctermfg=Black ctermbg=DarkYellow
-"highlight String cterm=none ctermfg=DarkGreen
-"highlight treeDir cterm=none ctermfg=Cyan
-"highlight treeUp cterm=none ctermfg=DarkYellow
-"highlight treeCWD cterm=none ctermfg=DarkYellow
-"highlight netrwDir cterm=none ctermfg=Cyan
 
