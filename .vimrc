@@ -236,8 +236,6 @@ autocmd FileType php noremap <F5> <ESC>:!php -f %<CR>
 autocmd FileType python noremap <F5> <ESC>:!python %<CR>
 autocmd FileType javascript noremap <F5> <ESC>:!js -strict -w -f %<CR>
 
-" start vim with NERDTree enabled
-" F1-F12 Keys are reserved on Macs so avoid using them
 map <Leader>l :BufExplorer<CR>
 imap <Leader>l <ESC>:BufExplorer<CR>
 vmap <Leader>l <ESC>:BufExplorer<CR>
