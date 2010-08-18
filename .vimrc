@@ -10,7 +10,7 @@ filetype indent on
 syntax on
 
 " default color scheme (based on wombat)
-colorscheme foursee
+colorscheme hedgehog
 
 " make sure that ZF standards for maximum line height are honoured
 set colorcolumn=80,120
@@ -65,6 +65,9 @@ set ignorecase
 
 " Ignore case only if seach string is all lowercase
 set smartcase
+
+" Make sure that tabline is always present
+set showtabline=2
 
 " Always show status line, even for one window
 set laststatus=2

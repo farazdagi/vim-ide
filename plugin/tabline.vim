@@ -22,10 +22,10 @@
         " Заполняем лишнее пространство
         let tabline .= '%#TabLineFill#%T'
 
-        " Выровненная по правому краю кнопка закрытия вкладки
-        if tabpagenr('$') > 1
-            let tabline .= '%=%#TabLine#%999XX'
-        endif
+        "Выровненная по правому краю кнопка закрытия вкладки
+        "if tabpagenr('$') > 1
+            "let tabline .= '%=%#TabLine#%999XX'
+        "endif
 
         return tabline
     endfunction
