@@ -190,10 +190,10 @@ set foldlevel=5
 
 " MWOP Suggestion
 "run file with PHP CLI (CTRL-M)
-autocmd FileType php noremap <C-M> :w!<CR>:!$HOME/bin/php %<CR>
+au FileType php noremap <C-M> :w!<CR>:!$HOME/bin/php %<CR>
 " " PHP parser check (CTRL-L)
-autocmd FileType php noremap <C-L> :!$HOME/bin/php -l %<CR>
-autocmd FileType python set omnifunc=pythoncomplete#Complete
+au FileType php noremap <C-L> :!$HOME/bin/php -l %<CR>
+au FileType python set omnifunc=pythoncomplete#Complete
 
 "
 " MAPPINGS
@@ -235,10 +235,11 @@ imap <F3> <ESC>:FufLine<CR>
 vmap <F3> <ESC><ESC>:FufLine<CR>
 
 
-autocmd FileType php noremap <C-F5> <ESC>:!phpunit %<CR>
-autocmd FileType php noremap <F5> <ESC>:!php -f %<CR>
-autocmd FileType python noremap <F5> <ESC>:!python %<CR>
-autocmd FileType javascript noremap <F5> <ESC>:!js -strict -w -f %<CR>
+au FileType php noremap <C-F5> <ESC>:!phpunit %<CR>
+au FileType php noremap <F5> <ESC>:!php -f %<CR>
+au FileType python noremap <F5> <ESC>:!python %<CR>
+au FileType javascript noremap <F5> <ESC>:!js -strict -w -f %<CR>
+au FileType vim noremap <F5> <ESC>:so %<CR>
 
 map <Leader>l :BufExplorer<CR>
 imap <Leader>l <ESC>:BufExplorer<CR>
