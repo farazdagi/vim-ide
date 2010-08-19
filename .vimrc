@@ -1,6 +1,11 @@
 "
 " MAIN CUSTOMIZATION FILE
 "
+"
+
+if has("gui_macvim")
+    set guifont=Menlo:h15
+endif
 
 " Enable loading filetype and indentation plugins
 filetype plugin on
