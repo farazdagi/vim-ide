@@ -1,4 +1,5 @@
-" Задаем собственные функции для назначения имен заголовкам табов -->
+finish
+
     function MyTabLine()
         let tabline = ''
 
@@ -64,5 +65,4 @@
 
     set tabline=%!MyTabLine()
     set guitablabel=%!MyGuiTabLabel()
-" Задаем собственные функции для назначения имен заголовкам табов <--
 

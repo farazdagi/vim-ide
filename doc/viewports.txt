@@ -1,0 +1,1 @@
+viewports.vim : Tabs manipulation script targeted for CLI versions of Vim
