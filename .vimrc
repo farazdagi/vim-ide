@@ -17,6 +17,9 @@ syntax on
 " default color scheme (based on wombat)
 colorscheme hedgehog
 
+" Purge previous auto commands (in case vimrc is run twice)
+autocmd!
+
 " make sure that ZF standards for maximum line height are honoured
 set colorcolumn=80,120
 
