@@ -17,6 +17,8 @@ hi TabLineFill guibg=#444444 guifg=#868686 gui=bold
 " Status Line
 
 
+" Cursor
+hi Cursor guibg=#252525 guifg=white
 hi CursorLine guibg=#2d2d2d
 hi CursorColumn guibg=#2d2d2d
 hi MatchParen guifg=#f6f3e8 guibg=#857b6f gui=bold
@@ -25,7 +27,6 @@ hi PmenuSel 	guifg=#000000 guibg=#cae682
 hi ColorColumn guibg=#2d2d2d
   
 " General colors
-hi Cursor 		guifg=NONE    guibg=#656565 gui=none
 hi Normal 		guifg=#f6f3e8 guibg=#242424 gui=none
 hi NonText 		guifg=#808080 guibg=#303030 gui=none
 hi LineNr 		guifg=#857b6f guibg=#000000 gui=none

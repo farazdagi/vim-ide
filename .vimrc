@@ -51,7 +51,10 @@ set backspace=indent,eol,start
 set cursorline
 
 " Insert mode completion options
-set completeopt=longest,menuone
+set completeopt=menuone
+
+" Allow smarter completion by infering the case
+set infercase
 
 " Use UTF-8 as the default buffer encoding
 set enc=utf-8
@@ -93,7 +96,7 @@ set ruler
 " Show line numbers - could be toggled on/off on-fly by pressing F6
 set number
 
-" Scroll when cursor gets within 3 characters of top/bottom edge
+" Scroll when cursor gets within 10 characters of top/bottom edge
 set scrolloff=10
 
 " Round indent to multiple of 'shiftwidth' for > and < commands
@@ -224,6 +227,9 @@ cmap w!! %!sudo tee > /dev/null %
 " Auto-complete - more smart menu see: http://bit.ly/d1ILFI
 "inoremap <expr> <CR> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
 "inoremap <expr> <C-n> pumvisible() ? '<C-n>' : '<C-n><C-r>=pumvisible() ? "\<lt>Down>" : ""<CR>'
+
+" Keyword (from current file only) completion - NetBeans habits
+imap <C-k> <C-x><C-n>
 
 " easy way to edit reload .vimrc
 nmap <Leader>vrr :source $MYVIMRC<CR>
