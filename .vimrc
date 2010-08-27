@@ -3,6 +3,10 @@
 "
 "
 
+" Purge previous auto commands (in case vimrc is run twice)
+autocmd!
+
+
 if has("gui_macvim")
     set guifont=Menlo:h15
 endif
@@ -134,6 +138,17 @@ set updatecount=50
 " %    - remember the buffer list (if vim started without a file arg)
 " n    - set name of viminfo file
 set viminfo='20,\"50,:20,%,n~/.viminfo
+
+" Define what to save with :mksession
+" blank - empty windows
+" buffers - all buffers not only ones in a window
+" curdir - the current directory
+" folds - including manually created ones
+" help - the help window
+" options - all options and mapping
+" winsize - window sizes
+" tabpages - all tab pages
+set sessionoptions=blank,buffers,curdir,folds,help,options,winsize,tabpages
 
 " Use menu to show command-line completion (in 'full' case)
 set wildmenu
