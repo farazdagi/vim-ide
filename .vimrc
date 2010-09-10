@@ -29,7 +29,7 @@ set undofile
 set undodir=/tmp
 
 " enable 256 colors in screen
-"set t_Co=256
+set t_Co=256
 
 " make sure that mouse is enabled
 set mouse=a
@@ -224,6 +224,10 @@ au FileType python set omnifunc=pythoncomplete#Complete
 
 " Set the <Leader> for combo commands
 let mapleader = ","
+
+" Easy window resizing (good to use with NERDTree)
+map <Leader>h 5<C-w><Bar>
+map <Leader>hh 35<C-w><Bar>
 
 " Easy tab navigation
 map tl :tabnext<CR>
