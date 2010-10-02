@@ -92,7 +92,10 @@ set matchtime=2
 set nrformats=octal,hex,alpha
 
 " Use F4 to toggle 'paste' mode
+nnoremap <F4> :set invpaste paste?<CR>
 set pastetoggle=<F4>
+set showmode
+
 
 " Show line, column number, and relative position within a file in the status line
 set ruler
