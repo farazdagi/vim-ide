@@ -130,6 +130,9 @@ set expandtab
 " Wrap text after hitting the 120-char length
 set textwidth=120
 
+" do not wrap lines by default
+set nowrap
+
 " Write swap file to disk after every 50 characters
 set updatecount=50
 
@@ -230,8 +233,8 @@ au FileType python set omnifunc=pythoncomplete#Complete
 let mapleader = ","
 
 " Easy window resizing (good to use with NERDTree)
-map <Leader>h 5<C-w><Bar>
-map <Leader>hh 35<C-w><Bar>
+map <Leader>h 1<C-w><Bar>
+map <Leader>hh 25<C-w><Bar>
 
 " Easy tab navigation
 map tl :tabnext<CR>
