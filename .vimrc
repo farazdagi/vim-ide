@@ -26,7 +26,7 @@ set colorcolumn=80,120
 
 " enable new 7.3 persistent undo feature
 set undofile
-set undodir=/tmp
+set undodir=~/.vim/undo
 
 " enable 256 colors in screen
 set t_Co=256
