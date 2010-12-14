@@ -218,6 +218,11 @@ let g:proj_window_width = 40
 let g:php_folding = 2
 set foldlevel=5
 
+" 
+" PHP
+"
+au FileType php set omnifunc=phpcomplete#CompletePHP
+
 " MWOP Suggestion
 "run file with PHP CLI (CTRL-M)
 au FileType php noremap <C-M> :w!<CR>:!$HOME/bin/php %<CR>
@@ -275,6 +280,7 @@ vmap <F3> <ESC><ESC>:FufLine<CR>
 au FileType php noremap <C-F5> <ESC>:!phpunit %<CR>
 au FileType php noremap <F5> <ESC>:!php -f %<CR>
 au FileType python noremap <F5> <ESC>:!python %<CR>
+au FileType sql noremap <F5> <ESC>:!mysql < %<CR>
 au FileType javascript noremap <F5> <ESC>:!js -strict -w -f %<CR>
 au FileType vim noremap <F5> <ESC>:so %<CR>
 
