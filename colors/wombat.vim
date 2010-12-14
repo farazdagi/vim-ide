@@ -29,12 +29,10 @@ hi LineNr 		guifg=#857b6f guibg=#000000 gui=none
 hi StatusLine 	guifg=#f6f3e8 guibg=#444444 gui=italic
 hi StatusLineNC guifg=#857b6f guibg=#444444 gui=none
 hi VertSplit 	guifg=#444444 guibg=#444444 gui=none
-hi Folded 		guifg=#99968b guibg=#242424 gui=italic gui=none
+hi Folded 		guibg=#384048 guifg=#a0a8b0 gui=none
 hi Title		guifg=#f6f3e8 guibg=NONE	gui=bold
 hi Visual		guifg=#f6f3e8 guibg=#444444 gui=none
 hi SpecialKey	guifg=#808080 guibg=#343434 gui=none
-hi Search	    guifg=#8ac6f2 guibg=#444444
-hi IncSearch       guibg=#444444      guifg=#8ac6f2
 
 " Syntax highlighting
 hi Comment 		guifg=#99968b gui=italic
@@ -50,7 +48,4 @@ hi PreProc 		guifg=#e5786d gui=none
 hi Number		guifg=#e5786d gui=none
 hi Special		guifg=#e7f6da gui=none
 
-" Diff highlighting
-hi DiffAdd      ctermfg=0 ctermbg=2 guibg='#95e454' guifg='#343434'
-hi DiffDelete   ctermfg=0 ctermbg=1 guibg='#e5786d' guifg='#343434'
-hi DiffChange   ctermfg=0 ctermbg=3 guibg='#8ac6f2' guifg='#343434' 
+
