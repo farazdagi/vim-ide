@@ -19,7 +19,7 @@ filetype indent on
 syntax on
 
 " default color scheme (based on wombat)
-colorscheme hedgehog
+colorscheme foursee
 
 " make sure that ZF standards for maximum line height are honoured
 set colorcolumn=80,120
@@ -181,7 +181,11 @@ let loaded_matchparen = 1
 let g:netrw_browse_split = 1
 
 " Make sure cursor is not blinking
-set gcr=a:blinkwait0,a:block-cursor
+if has("gui_macvim")
+    hi CursorColumn guibg=#cae682
+else
+    set gcr=a:blinkwait0,a:block-cursor
+endif
 
 " TeX/LaTeX support (via vim-latex-suite)
 filetype plugin on
