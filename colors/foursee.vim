@@ -23,6 +23,11 @@ if version >= 700
   hi ColorColumn guibg=#2d2d2d
 endif
 
+" Tabs/ViewPorts
+hi TabLineSel guibg=#252525 guifg=#C8C77E gui=none
+hi TabLine guibg=#444444 guifg=#868686 gui=none
+hi TabLineFill guibg=#444444 guifg=#868686 gui=bold
+
 " General colors
 hi Cursor 		guifg=NONE    guibg=#656565 gui=none
 hi Normal 		guifg=#f6f3e8 guibg=#242424 gui=none
