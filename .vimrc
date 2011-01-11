@@ -105,7 +105,7 @@ set ruler
 set number
 
 " Scroll when cursor gets within 10 characters of top/bottom edge
-set scrolloff=10
+set scrolloff=5
 
 " Round indent to multiple of 'shiftwidth' for > and < commands
 set shiftround
