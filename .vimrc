@@ -316,10 +316,12 @@ map <C-\> :tab split<CR>:exec("tag ".expand("<cword>"))<CR>
 
 
 " Allow to copy/paste between VIM instances
-vmap <silent> ,y y:new<CR>:call setline(1,getregtype())<CR>o<Esc>P:wq! ~/reg.txt<CR>
-nmap <silent> ,y :new<CR>:call setline(1,getregtype())<CR>o<Esc>P:wq! ~/reg.txt<CR>
-map <silent> ,p :sview ~/reg.txt<CR>"zdddG:q!<CR>:call setreg('"', @", @z)<CR>p
-map <silent> ,P :sview ~/reg.txt<CR>"zdddG:q!<CR>:call setreg('"', @", @z)<CR>P
+"copy the current visual selection to ~/.vbuf
+vmap <Leader>y :w! ~/.vbuf<CR>      
+"copy the current line to the buffer file if no visual selection
+nmap <Leader>y :.w! ~/.vbuf<CR>     
+"paste the contents of the buffer file
+nmap <Leader>p :r ~/.vbuf<CR>       
 
 " save changes
 map ,s :w<CR>
