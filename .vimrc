@@ -227,6 +227,9 @@ set foldlevel=5
 " PHP
 "
 au FileType php set omnifunc=phpcomplete#CompletePHP
+" LESS
+au BufNewFile,BufRead *.less set filetype=less
+
 
 " MWOP Suggestion
 "run file with PHP CLI (CTRL-M)
