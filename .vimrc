@@ -256,10 +256,6 @@ map th :tabprevious<CR>
 map tn :tabnew<CR>
 map td :tabclose<CR>
 
-" Do not bother too much with ESC key
-map! 33 <ESC>l
-vmap 33 <ESC>l
-
 " Allows you to enter sudo pass and save the file
 " when you forgot to open your file with sudo
 cmap w!! %!sudo tee > /dev/null %
