@@ -231,6 +231,8 @@ au FileType php set omnifunc=phpcomplete#CompletePHP
 au BufNewFile,BufRead *.less set filetype=less
 " WSGI
 au BufNewFile,BufRead *wsgi set filetype=python
+" HTML
+au BufRead,BufNewFile *.twig set filetype=html
 
 
 "run file with PHP CLI (CTRL-M)
