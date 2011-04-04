@@ -251,6 +251,7 @@ let mapleader = ","
 " Easy window resizing (good to use with NERDTree)
 map <Leader>h 1<C-w><Bar>
 map <Leader>hh 25<C-w><Bar>
+nmap <Leader>cat :!cat ~/.vbuf<CR>
 
 " Easy tab navigation
 map tl :tabnext<CR>
