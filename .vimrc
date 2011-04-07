@@ -11,9 +11,13 @@ if has("gui_macvim")
     set guifont=Menlo:h15
 endif
 
+filetype off
+
+call pathogen#helptags()
+call pathogen#runtime_append_all_bundles()
+
 " Enable loading filetype and indentation plugins
-filetype plugin on
-filetype indent on
+filetype plugin indent on
 
 " Turn syntax highlighting on
 syntax on
