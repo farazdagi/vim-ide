@@ -8,7 +8,7 @@ autocmd!
 
 
 if has("gui_macvim")
-    set guifont=Menlo:h15
+    set guifont=Menlo:h14
 endif
 
 " Enable loading filetype and indentation plugins
@@ -181,10 +181,9 @@ let loaded_matchparen = 1
 let g:netrw_browse_split = 1
 
 " Make sure cursor is not blinking
+set gcr=a:blinkwait0,a:block-cursor
 if has("gui_macvim")
     hi CursorColumn guibg=#cae682
-else
-    set gcr=a:blinkwait0,a:block-cursor
 endif
 
 " TeX/LaTeX support (via vim-latex-suite)
