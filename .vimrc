@@ -11,9 +11,13 @@ if has("gui_macvim")
     set guifont=Menlo:h14
 endif
 
+filetype off
+
+call pathogen#helptags()
+call pathogen#runtime_append_all_bundles()
+
 " Enable loading filetype and indentation plugins
-filetype plugin on
-filetype indent on
+filetype plugin indent on
 
 " Turn syntax highlighting on
 syntax on
@@ -105,7 +109,7 @@ set ruler
 set number
 
 " Scroll when cursor gets within 10 characters of top/bottom edge
-set scrolloff=10
+set scrolloff=5
 
 " Round indent to multiple of 'shiftwidth' for > and < commands
 set shiftround
@@ -226,8 +230,14 @@ set foldlevel=5
 " PHP
 "
 au FileType php set omnifunc=phpcomplete#CompletePHP
+" LESS
+au BufNewFile,BufRead *.less set filetype=less
+" WSGI
+au BufNewFile,BufRead *wsgi set filetype=python
+" HTML
+au BufRead,BufNewFile *.twig set filetype=html
 
-" MWOP Suggestion
+
 "run file with PHP CLI (CTRL-M)
 au FileType php noremap <C-M> :w!<CR>:!$HOME/bin/php %<CR>
 " " PHP parser check (CTRL-L)
@@ -244,16 +254,13 @@ let mapleader = ","
 " Easy window resizing (good to use with NERDTree)
 map <Leader>h 1<C-w><Bar>
 map <Leader>hh 25<C-w><Bar>
+nmap <Leader>cat :!cat ~/.vbuf<CR>
 
 " Easy tab navigation
 map tl :tabnext<CR>
 map th :tabprevious<CR>
 map tn :tabnew<CR>
 map td :tabclose<CR>
-
-" Do not bother too much with ESC key
-map! 33 <ESC>
-vmap 33 <ESC>
 
 " Allows you to enter sudo pass and save the file
 " when you forgot to open your file with sudo
@@ -315,10 +322,12 @@ map <C-\> :tab split<CR>:exec("tag ".expand("<cword>"))<CR>
 
 
 " Allow to copy/paste between VIM instances
-vmap <silent> ,y y:new<CR>:call setline(1,getregtype())<CR>o<Esc>P:wq! ~/reg.txt<CR>
-nmap <silent> ,y :new<CR>:call setline(1,getregtype())<CR>o<Esc>P:wq! ~/reg.txt<CR>
-map <silent> ,p :sview ~/reg.txt<CR>"zdddG:q!<CR>:call setreg('"', @", @z)<CR>p
-map <silent> ,P :sview ~/reg.txt<CR>"zdddG:q!<CR>:call setreg('"', @", @z)<CR>P
+"copy the current visual selection to ~/.vbuf
+vmap <Leader>y :w! ~/.vbuf<CR>      
+"copy the current line to the buffer file if no visual selection
+nmap <Leader>y :.w! ~/.vbuf<CR>     
+"paste the contents of the buffer file
+nmap <Leader>p :r ~/.vbuf<CR>       
 
 " save changes
 map ,s :w<CR>

@@ -1,0 +1,81 @@
+*htmlspecialchars.txt*  Convert special characters to HTML entities.
+$Id: htmlspecialchars.txt 56 2008-09-10 00:57:27Z taku $
+
+						*htmlspecialchars*
+Convert special characters to HTML entities.
+
+1. Encode				|HTMLSpecialChars|
+2. Decode				|HTMLSpecialCharsDecode|
+3. Customization Variables		|htmlspecialchars-customization|
+
+
+==============================================================================
+1. Encode					*HTMLSpecialChars*
+
+:[range]HTMLSpecialChars			*:HTMLSpecialChars*
+
+Example ~
+
+-------------------------------before-------------------------------
+<pre class="preformat"> 
+    <span class="a_class">sample text</span>
+    <span class="a_class">sample text</span>
+    <span class="a_class">sample text</span>
+</pre>
+-------------------------------before-------------------------------
+>
+	:2,4HTMLSpecialChars
+<
+-------------------------------after -------------------------------
+<pre class="preformat"> 
+    &lt;span class=&quot;a_class&quot;&gt;sample text&lt;/span&gt;
+    &lt;span class=&quot;a_class&quot;&gt;sample text&lt;/span&gt;
+    &lt;span class=&quot;a_class&quot;&gt;sample text&lt;/span&gt;
+</pre>
+-------------------------------after -------------------------------
+
+
+==============================================================================
+2. Decode					*HTMLSpecialCharsDecode*
+
+:[range]HTMLSpecialCharsDecode			*:HTMLSpecialCharsDecode*
+
+Example ~
+
+-------------------------------before -------------------------------
+<pre class="preformat"> 
+    &lt;span class=&quot;a_class&quot;&gt;sample text&lt;/span&gt;
+    &lt;span class=&quot;a_class&quot;&gt;sample text&lt;/span&gt;
+    &lt;span class=&quot;a_class&quot;&gt;sample text&lt;/span&gt;
+</pre>
+-------------------------------before-------------------------------
+>
+	:2,4HTMLSpecialCharsDecode
+<
+-------------------------------after -------------------------------
+<pre class="preformat"> 
+    <span class="a_class">sample text</span>
+    <span class="a_class">sample text</span>
+    <span class="a_class">sample text</span>
+</pre>
+-------------------------------after -------------------------------
+
+
+==============================================================================
+3. Customization Variables		*htmlspecialchars-customization*
+
+*g:htmlspecialchars_ent_noquotes*
+Set this variable to a nonzero value if you don't prefer to convert character
+from '"' to '&quot;'
+e.g.: >
+    :let g:htmlspecialchars_ent_noquotes = 'yes'
+<
+
+*g:htmlspecialchars_ent_quotes*
+Set this variable to a nonzero value if you prefer to convert character
+from "'" to "#039"
+e.g.: >
+    :let g:htmlspecialchars_ent_quotes = 'yes'
+<
+
+ vim:tw=78:ts=8:ft=help:norl:
