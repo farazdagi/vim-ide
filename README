@@ -1,1 +1,8 @@
 List of plugins that are helpful in turning VIM into somewhat light-weight IDE.
+
+Make sure you initialize submodules, inside .vim:
+
+<code>
+~/.vim$ git submodule init
+~/.vim$ git submodule update
+</code>
