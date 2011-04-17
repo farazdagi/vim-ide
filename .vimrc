@@ -25,6 +25,12 @@ syntax on
 " default color scheme (based on wombat)
 colorscheme foursee
 
+" make sure that cyrillic input is supported
+set keymap=russian-jcukenwin
+set iminsert=0
+set imsearch=0
+highlight lCursor guifg=NONE guibg=Cyan
+
 " make sure that ZF standards for maximum line height are honoured
 set colorcolumn=80,120
 
@@ -275,8 +281,8 @@ cmap w!! %!sudo tee > /dev/null %
 imap <C-k> <C-x><C-n>
 
 " easy way to edit reload .vimrc
-nmap <Leader>vrr :source $MYVIMRC<CR>
-nmap <Leader>vr :e $MYVIMRC<CR>
+nmap <Leader>V :source $MYVIMRC<CR>
+nmap <Leader>v :vsp $MYVIMRC<CR>
 
 " F2 allow to utilize screen
 map <F2> :!screen -x cli<CR>
