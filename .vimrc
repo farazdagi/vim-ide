@@ -354,7 +354,7 @@ map ,s :w<CR>
 imap ,s <ESC>:w<CR>
 vmap ,s <ESC><ESC>:w<CR>
 " Locate file in hierarchy quickly
-map ,t :NERDTree %<CR>
+map ,T :NERDTree %<CR>
 " change the directory to the current file I'm working on
 " plays nicely with NERDTree - when file opened
 map ,cd :cd %:p:h
