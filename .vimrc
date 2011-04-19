@@ -29,7 +29,7 @@ colorscheme foursee
 set keymap=russian-jcukenwin
 set iminsert=0
 set imsearch=0
-highlight lCursor guifg=NONE guibg=Cyan
+highlight lCursor guifg=NONE guibg=#cae682
 
 " make sure that ZF standards for maximum line height are honoured
 set colorcolumn=80,120
@@ -263,10 +263,17 @@ map <Leader>h 1<C-w><Bar>
 map <Leader>hh 25<C-w><Bar>
 nmap <Leader>cat :!cat ~/.vbuf<CR>
 
+" Easy keymap switing
+imap <Leader>r <C-^>
+nmap <Leader>r a<C-^><ESC>
+
+" Phrozn key
+nmap <Leader>phr :!phr up .<CR>
+
 " Easy tab navigation
-map tl :tabnext<CR>
-map th :tabprevious<CR>
-map tn :tabnew<CR>
+map tn :tabnext<CR>
+map tp :tabprevious<CR>
+map tc :tabnew<CR>
 map td :tabclose<CR>
 
 " Allows you to enter sudo pass and save the file
