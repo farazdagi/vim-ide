@@ -249,6 +249,13 @@ au FileType php noremap <C-M> :w!<CR>:!$HOME/bin/php %<CR>
 " " PHP parser check (CTRL-L)
 au FileType php noremap <C-L> :!$HOME/bin/php -l %<CR>
 au FileType python set omnifunc=pythoncomplete#Complete
+augroup sh
+    au!
+    "smart indent really only for C like languages
+    au FileType sh set nosmartindent autoindent
+    au FileType sh map <C-M> :QuickRun<CR>
+augroup END
+
 
 "
 " MAPPINGS
