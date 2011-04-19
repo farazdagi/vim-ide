@@ -10,6 +10,9 @@
 [submodule "bundle/vim-markdown"]
 	path = bundle/vim-markdown
 	url = git://github.com/tpope/vim-markdown.git
-[submodule "vim-colors-solarized"]
-	path = vim-colors-solarized
+[submodule "bundle/vim-colors-solarized"]
+	path = bundle/vim-colors-solarized
 	url = git://github.com/altercation/vim-colors-solarized.git
+[submodule "bundle/quickrun"]
+	path = bundle/quickrun
+	url = git://github.com/thinca/vim-quickrun.git
