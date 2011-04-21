@@ -285,6 +285,12 @@ let g:user_zen_settings = {
   \ },
   \}
 
+" PhpDoc
+source ~/.vim/bundle/phpdoc/phpdoc.vim
+inoremap <Leader>d <ESC>:call PhpDocSingle()<CR>i
+nnoremap <Leader>d :call PhpDocSingle()<CR>
+vnoremap <Leader>d :call PhpDocRange()<CR>
+
 
 " Easy keymap switing
 imap <Leader>r <C-^>
