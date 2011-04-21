@@ -269,6 +269,23 @@ map <Leader>h 1<C-w><Bar>
 map <Leader>hh 25<C-w><Bar>
 nmap <Leader>cat :!cat ~/.vbuf<CR>
 
+" ZenCoding
+" Make sure that before expanding cursor is moved at the EOL
+imap <Leader>m <C-O>$<C-Y>,
+let g:user_zen_settings = {
+  \ 'php' : {
+  \ 'extends' : 'html',
+  \ 'filters' : 'c',
+  \ },
+  \ 'xml' : {
+  \ 'extends' : 'html',
+  \ },
+  \ 'haml' : {
+  \ 'extends' : 'html',
+  \ },
+  \}
+
+
 " Easy keymap switing
 imap <Leader>r <C-^>
 nmap <Leader>r a<C-^><ESC>
