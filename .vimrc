@@ -217,6 +217,7 @@ let NERDTreeWinSize = 35
 " Make sure that when NT root is changed, Vim's pwd is also updated
 let NERDTreeChDirMode = 2
 let NERDTreeShowLineNumbers = 1
+let NERDTreeAutoCenter = 1
 " Open NERDTree on startup
 au VimEnter * NERDTree
 
@@ -263,6 +264,9 @@ augroup END
 
 " Set the <Leader> for combo commands
 let mapleader = ","
+
+imap <Leader>z <ESC>l
+vmap <Leader>z <ESC><ESC>l
 
 " Easy window resizing (good to use with NERDTree)
 map <Leader>h 1<C-w><Bar>
@@ -373,9 +377,9 @@ nmap <Leader>y :.w! ~/.vbuf<CR>
 nmap <Leader>p :r ~/.vbuf<CR>       
 
 " save changes
-map ,s :w<CR>
-imap ,s <ESC>:w<CR>
-vmap ,s <ESC><ESC>:w<CR>
+map <Leader>s :w<CR>
+imap <Leader>s <ESC>:w<CR>
+vmap <Leader>s <ESC><ESC>:w<CR>
 " Locate file in hierarchy quickly
 map ,T :NERDTree %<CR>
 " change the directory to the current file I'm working on
