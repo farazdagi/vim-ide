@@ -58,6 +58,7 @@ hi Number		guifg=#e5786d gui=none
 hi Special		guifg=#e7f6da gui=none
 
 " Diff highlighting
-hi DiffAdd      ctermfg=0 ctermbg=2 guibg='#95e454' guifg='#343434'
-hi DiffDelete   ctermfg=0 ctermbg=1 guibg='#e5786d' guifg='#343434'
-hi DiffChange   ctermfg=0 ctermbg=3 guibg='#8ac6f2' guifg='#343434' 
+hi DiffDelete guifg=#303030 guibg=#505050
+hi DiffAdd    guibg=#002851
+hi DiffChange guibg=#450303
+hi DiffText   guibg=#990909 gui=none
