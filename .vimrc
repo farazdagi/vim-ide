@@ -341,7 +341,8 @@ imap <F3> <ESC>:FufLine<CR>
 vmap <F3> <ESC><ESC>:FufLine<CR>
 
 
-au FileType php noremap <C-F5> <ESC>:!phpunit %<CR>
+au FileType php noremap <Leader>k <ESC>:!phpunit --configuration tests/phpunit.xml --group cur %<CR>
+au FileType php noremap <Leader>j <ESC>:!phpunit --configuration tests/phpunit.xml %<CR>
 au FileType php noremap <F5> <ESC>:!php -f %<CR>
 au FileType python noremap <F5> <ESC>:!python %<CR>
 au FileType sql noremap <F5> <ESC>:!mysql < %<CR>
