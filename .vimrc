@@ -307,7 +307,7 @@ imap <Leader>r <C-^>
 nmap <Leader>r a<C-^><ESC>
 
 " Phrozn key
-nmap <Leader>phr :!phr up .<CR>
+nmap <Leader>phr :!phr-dev up .<CR>
 
 " Easy tab navigation
 map tn :tabnext<CR>
