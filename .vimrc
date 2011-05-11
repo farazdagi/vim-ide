@@ -233,6 +233,12 @@ let g:proj_window_width = 40
 let g:php_folding = 2
 set foldlevel=5
 
+"
+" Command-T
+"
+" never show auto-generated api-docs files
+set wildignore=api-docs/**,public/api-docs/**
+
 " 
 " PHP
 "
