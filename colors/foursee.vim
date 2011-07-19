@@ -45,7 +45,7 @@ hi IncSearch        guibg=#444444 guifg=#8ac6f2
 
 " Syntax highlighting
 hi Comment      guifg=#99968b gui=italic
-hi Todo         guifg=#8f8f8f gui=italic
+hi Todo         guifg=#f4a460 guibg=NONE gui=italic
 hi Constant     guifg=#e5786d gui=none
 hi String       guifg=#95e454 gui=italic
 hi Identifier   guifg=#cae682 gui=none
@@ -59,7 +59,7 @@ hi Special      guifg=#e7f6da gui=none
 
 " Diff highlighting
 hi DiffDelete guibg=#444444 guifg=#99968b
-hi DiffAdd    guibg=#6E8B3D
+hi DiffAdd    guibg=#2A5447
 hi DiffChange guibg=#53868B
 hi DiffText   guibg=#990909 gui=none
 

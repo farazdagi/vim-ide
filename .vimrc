@@ -353,6 +353,12 @@ map <Leader>l :BufExplorer<CR>
 imap <Leader>l <ESC>:BufExplorer<CR>
 vmap <Leader>l <ESC>:BufExplorer<CR>
 
+" vimdiff
+map ]] ]c
+map [[ [c
+map <Leader>gdi :Gdiff<CR>
+map <Leader>gst :Gstatus<CR>
+
 " F8 See List of Bookmarks
 map <F7> :MarksBrowser<CR>
 imap <F7> <ESC>:MarksBrowser<CR>
