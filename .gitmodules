@@ -31,3 +31,9 @@
 [submodule "bundle/gitv"]
 	path = bundle/gitv
 	url = git://github.com/gregsexton/gitv.git
+[submodule "bundle/vimtodo"]
+	path = bundle/vimtodo
+	url = git://github.com/mivok/vimtodo.git
+[submodule "bundle/vim-space"]
+	path = bundle/vim-space
+	url = git://github.com/spiiph/vim-space.git
