@@ -37,3 +37,6 @@
 [submodule "bundle/vim-space"]
 	path = bundle/vim-space
 	url = git://github.com/spiiph/vim-space.git
+[submodule "bundle/gist-vim"]
+	path = bundle/gist-vim
+	url = git://github.com/mattn/gist-vim.git
