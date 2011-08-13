@@ -329,6 +329,7 @@ imap <C-k> <C-x><C-n>
 " easy way to edit reload .vimrc
 nmap <Leader>V :source $MYVIMRC<CR>
 nmap <Leader>v :vsp $MYVIMRC<CR>
+nmap <Leader>todo :vsp ~/projects.todo.txt<CR>
 
 " F2 allow to utilize screen
 map <F2> :!screen -x cli<CR>
