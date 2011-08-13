@@ -295,12 +295,9 @@ let g:user_zen_settings = {
   \ },
   \}
 
-" PhpDoc
-source ~/.vim/bundle/phpdoc/phpdoc.vim
-inoremap <Leader>d <ESC>:call PhpDocSingle()<CR>i
-nnoremap <Leader>d :call PhpDocSingle()<CR>
-vnoremap <Leader>d :call PhpDocRange()<CR>
-
+" Gist plugin
+let g:gist_show_privates = 1
+let g:gist_private = 1
 
 " Easy keymap switing
 imap <Leader>r <C-^>
