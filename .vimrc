@@ -392,6 +392,10 @@ nmap <Leader>p :r ~/.vbuf<CR>
 map <Leader>s :w<CR>
 imap <Leader>s <ESC>:w<CR>
 vmap <Leader>s <ESC><ESC>:w<CR>
+" reload uwsgi
+map <Leader>u :silent !touch /tmp/uwsgi-reload.txt<CR><C-l>
+imap <Leader>u <ESC>:silent !touch /tmp/uwsgi-reload.txt<CR><C-l>
+vmap <Leader>u <ESC><ESC>:silent !touch /tmp/uwsgi-reload.txt<CR><C-l>
 " Locate file in hierarchy quickly
 map ,T :NERDTree %<CR>
 " change the directory to the current file I'm working on
