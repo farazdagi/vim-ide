@@ -249,6 +249,9 @@ au BufNewFile,BufRead *.less set filetype=less
 au BufNewFile,BufRead *wsgi set filetype=python
 " HTML
 au BufRead,BufNewFile *.twig set filetype=html
+" Remove trailing spaces
+au BufWritePre *.php :%s/\s\+$//e
+au BufWritePre *.py :%s/\s\+$//e
 
 
 "run file with PHP CLI (CTRL-M)
