@@ -18,7 +18,7 @@
 	url = git://github.com/thinca/vim-quickrun.git
 [submodule "bundle/command-t"]
 	path = bundle/command-t
-	url = git://git.wincent.com/command-t.git
+	url = git://github.com/wincent/Command-T.git
 [submodule "bundle/csapprox"]
 	path = bundle/csapprox
 	url = git://github.com/godlygeek/csapprox.git

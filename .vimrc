@@ -252,6 +252,11 @@ au BufRead,BufNewFile *.twig set filetype=html
 " Remove trailing spaces
 au BufWritePre *.php :%s/\s\+$//e
 au BufWritePre *.py :%s/\s\+$//e
+au BufWritePre *.html :%s/\s\+$//e
+au BufWritePre *.twig :%s/\s\+$//e
+au BufWritePre *.yml :%s/\s\+$//e
+au BufWritePre *.xml :%s/\s\+$//e
+au BufWritePre *.js :%s/\s\+$//e
 
 
 "run file with PHP CLI (CTRL-M)
