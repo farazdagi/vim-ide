@@ -35,8 +35,8 @@ highlight lCursor guifg=NONE guibg=#cae682
 set colorcolumn=80,120
 
 " enable new 7.3 persistent undo feature
-set undofile
-set undodir=~/.vim/undo
+"set undofile
+"set undodir=~/.vim/undo
 
 " enable 256 colors in screen
 set t_Co=256
@@ -212,7 +212,7 @@ set tags+=$HOME/.vim/tags/python2.ctags
 "
 
 " NERDTree
-let NERDTreeIgnore=['\.pyc$']
+let NERDTreeIgnore=['\.pyc$', '\.php\~$']
 let NERDTreeWinSize = 35
 " Make sure that when NT root is changed, Vim's pwd is also updated
 let NERDTreeChDirMode = 2
@@ -227,6 +227,9 @@ let g:proj_window_width = 40
 " SnippetEmu
 " let g:snippetsEmu_key = "<C-j>"
 
+" Command-T Plugin
+let g:CommandTMaxHeight = 25
+
 "
 " Folding
 "
@@ -238,6 +241,10 @@ set foldlevel=5
 "
 " never show auto-generated api-docs files
 set wildignore=api-docs/**,public/api-docs/**
+
+"
+" Large File
+"
 
 " 
 " PHP
@@ -257,6 +264,7 @@ au BufWritePre *.twig :%s/\s\+$//e
 au BufWritePre *.yml :%s/\s\+$//e
 au BufWritePre *.xml :%s/\s\+$//e
 au BufWritePre *.js :%s/\s\+$//e
+au BufWritePre *.md :%s/\s\+$//e
 
 
 "run file with PHP CLI (CTRL-M)
@@ -287,6 +295,9 @@ vmap <Leader>z <ESC><ESC>l
 map <Leader>h 1<C-w><Bar>
 map <Leader>hh 25<C-w><Bar>
 nmap <Leader>cat :!cat ~/.vbuf<CR>
+
+" Large file
+let g:LargeFile = 2
 
 " ZenCoding
 " Make sure that before expanding cursor is moved at the EOL
@@ -444,3 +455,5 @@ vnoremap > >gv
 " turn off search highlighting
 nmap <silent> <Leader>n :silent :nohlsearch<CR>
 
+" Make sure that CTRL-A (used by gnu screen) is redefined
+noremap <Leader>inc <C-A>
