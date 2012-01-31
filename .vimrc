@@ -420,7 +420,7 @@ map <Leader>u :silent !touch /tmp/uwsgi-reload.txt<CR><C-l>
 imap <Leader>u <ESC>:silent !touch /tmp/uwsgi-reload.txt<CR><C-l>
 vmap <Leader>u <ESC><ESC>:silent !touch /tmp/uwsgi-reload.txt<CR><C-l>
 " Locate file in hierarchy quickly
-map ,T :NERDTree %<CR>
+map <Leader>T :NERDTreeFind<CR>
 " change the directory to the current file I'm working on
 " plays nicely with NERDTree - when file opened
 map ,cd :cd %:p:h
