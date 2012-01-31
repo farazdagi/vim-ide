@@ -31,6 +31,8 @@ set iminsert=0
 set imsearch=0
 highlight lCursor guifg=NONE guibg=#cae682
 
+let g:snippets_dir = $HOME . "/.vim/bundle/snipmate-snippets"
+
 " make sure that ZF standards for maximum line height are honoured
 set colorcolumn=80,120
 
@@ -212,6 +214,8 @@ set tags+=$HOME/.vim/tags/python2.ctags
 "
 
 " NERDTree
+let NERDTreeDirArrows=1
+let NERDTreeMinimalUI=1
 let NERDTreeIgnore=['\.pyc$', '\.php\~$']
 let NERDTreeWinSize = 35
 " Make sure that when NT root is changed, Vim's pwd is also updated
