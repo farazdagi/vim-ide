@@ -240,7 +240,7 @@ set foldlevel=5
 " Command-T
 "
 " never show auto-generated api-docs files
-set wildignore=api-docs/**,public/api-docs/**
+set wildignore=api-docs/**,public/api-docs/**,app/cache/**,*.php~
 
 "
 " Large File
