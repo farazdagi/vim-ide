@@ -431,11 +431,8 @@ imap ,diff <ESC>:call Svndiff('next')<CR>
 map ,diffc :call Svndiff('clear')<CR>
 imap ,diffc <ESC>:call Svndiff('clear')<CR>
 " switch to upper/lower window quickly
-map <C-J> <C-E>
-map <C-K> <C-Y>
-" resize window
-map <silent> <A-j> <C-W>-
-map <silent> <A-k> <C-W>+
+map <C-J> 3j
+map <C-K> 3k
 " use CTRL-F for omni completion
 imap <C-F> 
 " map CTRL-L to piece-wise copying of the line above the current one
@@ -463,3 +460,9 @@ nmap <silent> <Leader>n :silent :nohlsearch<CR>
 noremap <Leader>inc <C-A>
 
 map <Leader>cn :cn<CR>
+imap <Leader>co <Esc>:call CompileRunGcc()<CR>
+func! CompileRunGcc()
+    exec "w"
+    exec "!clear && gcc -Wall -std=c99 % -o %< && echo '\\n--------------------------------------------\\n' && ./%<"
+    "exec "! ./%<"
+endfunc
