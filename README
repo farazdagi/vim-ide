@@ -1,8 +1,20 @@
-List of plugins that are helpful in turning VIM into somewhat light-weight IDE.
+How to Install VIM-IDE in simple steps
 
-Make sure you initialize submodules, inside .vim:
+Note: This document assumes you have never installed or configured vim and that you are using Ubuntu. If you have already installed it please backup and rm your ~/.vim and ~/.vimrc file as it will be replaced by VIM-IDE.
 
-<code>
-~/.vim$ git submodule init
-~/.vim$ git submodule update
-</code>
+Install VIM and Dependencies
+sudo apt-get install vim-runtime vim-common vim-gui-common vim-tiny curl exuberant-ctags
+
+Clone the GIT repo to your HOME directory and go there
+cd ~/
+git clone https://github.com/farazdagi/vim-ide.git
+cd /vim-ide
+
+Get latest GIT Submodule dependencies
+git submodule init
+git submodule update
+
+Create Symbolic Link to vim-ide so vim can find it
+ln -s ~/vim-ide ~/.vim
+
+Enjoy!
