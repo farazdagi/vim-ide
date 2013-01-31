@@ -117,7 +117,7 @@ set ruler
 set number
 
 " Scroll when cursor gets within 10 characters of top/bottom edge
-set scrolloff=5
+set scrolloff=999
 
 " Round indent to multiple of 'shiftwidth' for > and < commands
 set shiftround
@@ -223,7 +223,7 @@ let NERDTreeChDirMode = 2
 let NERDTreeShowLineNumbers = 1
 let NERDTreeAutoCenter = 1
 " Open NERDTree on startup
-au VimEnter * NERDTree
+" au VimEnter * NERDTree
 
 " Project
 let g:proj_flags="FisLt"
@@ -302,22 +302,6 @@ nmap <Leader>cat :!cat ~/.vbuf<CR>
 
 " Large file
 let g:LargeFile = 2
-
-" ZenCoding
-" Make sure that before expanding cursor is moved at the EOL
-imap <Leader>m <C-O>$<C-Y>,
-let g:user_zen_settings = {
-  \ 'php' : {
-  \ 'extends' : 'html',
-  \ 'filters' : 'c',
-  \ },
-  \ 'xml' : {
-  \ 'extends' : 'html',
-  \ },
-  \ 'haml' : {
-  \ 'extends' : 'html',
-  \ },
-  \}
 
 " Gist plugin
 let g:gist_show_privates = 1
@@ -415,6 +399,11 @@ nmap <Leader>p :r ~/.vbuf<CR>
 map <Leader>s :w<CR>
 imap <Leader>s <ESC>:w<CR>
 vmap <Leader>s <ESC><ESC>:w<CR>
+" This is totally awesome - remap jj to escape in insert mode.  You'll never type jj anyway, so it's great!
+inoremap jj <Esc>
+nnoremap JJJJ <Nop>
+inoremap <C-[> <Esc>
+
 " reload uwsgi
 map <Leader>u :silent !touch /tmp/uwsgi-reload.txt<CR><C-l>
 imap <Leader>u <ESC>:silent !touch /tmp/uwsgi-reload.txt<CR><C-l>
@@ -431,8 +420,8 @@ imap ,diff <ESC>:call Svndiff('next')<CR>
 map ,diffc :call Svndiff('clear')<CR>
 imap ,diffc <ESC>:call Svndiff('clear')<CR>
 " switch to upper/lower window quickly
-map <C-J> 3j
-map <C-K> 3k
+map <C-J> 5j
+map <C-K> 5k
 " use CTRL-F for omni completion
 imap <C-F> 
 " map CTRL-L to piece-wise copying of the line above the current one
@@ -460,9 +449,13 @@ nmap <silent> <Leader>n :silent :nohlsearch<CR>
 noremap <Leader>inc <C-A>
 
 map <Leader>cn :cn<CR>
-imap <Leader>co <Esc>:call CompileRunGcc()<CR>
+map <Leader>co <Esc>:call CompileRunGcc()<CR>
+map <Leader>m <Esc>:!clear && make && ./prog<CR>
 func! CompileRunGcc()
     exec "w"
-    exec "!clear && gcc -Wall -std=c99 % -o %< && echo '\\n--------------------------------------------\\n' && ./%<"
+    exec "!clear && gcc -Wall -std=c99 -pedantic-errors % -o %< && echo '\\n--------------------------------------------\\n' && ./%<"
     "exec "! ./%<"
 endfunc
+
+map <F8> :Cnext<CR>
+map <F10> :Cstep<CR>
