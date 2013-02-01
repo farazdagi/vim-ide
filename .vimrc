@@ -234,6 +234,11 @@ let g:proj_window_width = 40
 " Command-T Plugin
 let g:CommandTMaxHeight = 25
 
+" Gist
+let g:gist_detect_filetype = 1
+let g:gist_post_private = 1
+let g:gist_show_privates = 1
+
 "
 " Folding
 "
