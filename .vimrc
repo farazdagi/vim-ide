@@ -1,7 +1,6 @@
 "
 " MAIN CUSTOMIZATION FILE
 "
-"
 
 " Purge previous auto commands (in case vimrc is run twice)
 autocmd!
@@ -13,8 +12,8 @@ endif
 
 filetype off
 
-call pathogen#helptags()
 call pathogen#runtime_append_all_bundles()
+call pathogen#helptags()
 
 " Enable loading filetype and indentation plugins
 filetype plugin indent on
@@ -464,3 +463,4 @@ endfunc
 
 map <F8> :Cnext<CR>
 map <F10> :Cstep<CR>
+map <Leader>pep :!pep8 %<CR>
