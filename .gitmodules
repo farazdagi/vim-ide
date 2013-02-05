@@ -52,3 +52,6 @@
 [submodule "bundle/webapi-vim.git"]
 	path = bundle/webapi-vim.git
 	url = git://github.com/mattn/webapi-vim.git
+[submodule "bundle/delimitmate"]
+	path = bundle/delimitmate
+	url = git://github.com/Raimondi/delimitMate.git
