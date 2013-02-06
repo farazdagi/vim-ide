@@ -6,9 +6,6 @@
 autocmd!
 
 
-if has("gui_macvim")
-    set guifont=Menlo:h14
-endif
 
 " Load pathogen
 execute pathogen#infect()
@@ -20,7 +17,14 @@ filetype plugin indent on
 syntax on
 
 " default color scheme (based on wombat)
-colorscheme foursee
+if has("gui_macvim")
+    set guifont=Menlo:h14
+    set background=light
+    colorscheme solarized
+else
+    set background=dark
+    colorscheme foursee
+endif
 
 " make sure that cyrillic input is supported
 set keymap=russian-jcukenwin
