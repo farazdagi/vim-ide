@@ -1,0 +1,30 @@
+snippet func "public function"
+public function ${1:name}(${2:args})
+{
+    ${3:code}
+}
+endsnippet
+
+snippet _func "protected function"
+protected function ${1:name}(${2:args})
+{
+    ${3:code}
+}
+endsnippet
+
+snippet switch "switch statement"
+switch (${1:var}) {
+    case '${2:val}':
+        break;
+    default:
+        break;
+}
+endsnippet
+
+snippet throw "throw RuntimeException" !b
+throw new \RuntimeException(${1:message});
+endsnippet
+
+snippet sprintf "sprintf function "
+sprintf('${1:message}', ${2:arg});
+endsnippet
