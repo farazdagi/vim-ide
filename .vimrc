@@ -12,6 +12,7 @@ endif
 
 filetype off
 
+" Load pathogen
 call pathogen#runtime_append_all_bundles()
 call pathogen#helptags()
 
@@ -29,8 +30,6 @@ set keymap=russian-jcukenwin
 set iminsert=0
 set imsearch=0
 highlight lCursor guifg=NONE guibg=#cae682
-
-let g:snippets_dir = $HOME . "/.vim/bundle/snipmate-snippets"
 
 " make sure that ZF standards for maximum line height are honoured
 set colorcolumn=80,120
@@ -203,7 +202,7 @@ set grepprg=grep\ -nH\ $*
 filetype indent on
 let g:tex_flavor='latex'
 
-" 
+"
 " Tags
 "
 set tags+=$HOME/.vim/tags/python2.ctags
@@ -238,6 +237,13 @@ let g:gist_detect_filetype = 1
 let g:gist_post_private = 1
 let g:gist_show_privates = 1
 
+" UltiSnips
+let g:UltiSnipsEditSplit="vertical"
+let g:UltiSnipsSnippetsDir="~/.vim/mydata/snippets"
+"let g:UltiSnipsExpandTrigger="<tab>"
+"let g:UltiSnipsJumpForwardTrigger="<c-n>"
+"let g:UltiSnipsJumpBackwardTrigger="<c-p>"
+
 "
 " Folding
 "
@@ -254,7 +260,7 @@ set wildignore=api-docs/**,public/api-docs/**,app/cache/**,*.php~
 " Large File
 "
 
-" 
+"
 " PHP
 "
 au FileType php set omnifunc=phpcomplete#CompletePHP
@@ -264,15 +270,15 @@ au BufNewFile,BufRead *.less set filetype=less
 au BufNewFile,BufRead *wsgi set filetype=python
 " HTML
 au BufRead,BufNewFile *.twig set filetype=html
+" highlight trailing space
+highlight ExtraWhitespace ctermbg=red guibg=red
+match ExtraWhitespace /\s\+$/
+autocmd BufWinEnter * match ExtraWhitespace /\s\+$/
+autocmd InsertEnter * match ExtraWhitespace /\s\+\%#\@<!$/
+autocmd InsertLeave * match ExtraWhitespace /\s\+$/
+autocmd BufWinLeave * call clearmatches()
 " Remove trailing spaces
-au BufWritePre *.php :%s/\s\+$//e
-au BufWritePre *.py :%s/\s\+$//e
-au BufWritePre *.html :%s/\s\+$//e
-au BufWritePre *.twig :%s/\s\+$//e
-au BufWritePre *.yml :%s/\s\+$//e
-au BufWritePre *.xml :%s/\s\+$//e
-au BufWritePre *.js :%s/\s\+$//e
-au BufWritePre *.md :%s/\s\+$//e
+au FileType vim,php,c,py,html,twig,yml,xml,js,md au BufWritePre *.php :%s/\s\+$//e
 
 
 "run file with PHP CLI (CTRL-M)
@@ -404,7 +410,7 @@ map <Leader>s :w<CR>
 imap <Leader>s <ESC>:w<CR>
 vmap <Leader>s <ESC><ESC>:w<CR>
 " This is totally awesome - remap jj to escape in insert mode.  You'll never type jj anyway, so it's great!
-inoremap jj <Esc>
+inoremap jj <Esc>l
 nnoremap JJJJ <Nop>
 inoremap <C-[> <Esc>
 
@@ -461,6 +467,7 @@ func! CompileRunGcc()
     "exec "! ./%<"
 endfunc
 
-map <F8> :Cnext<CR>
-map <F10> :Cstep<CR>
-map <Leader>pep :!pep8 %<CR>
+nmap <F8> :Cnext<CR>
+nmap <F10> :Cstep<CR>
+nmap <Leader>pep :!pep8 %<CR>
+nmap <Leader>x :TagbarToggle<CR>
