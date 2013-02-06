@@ -10,11 +10,8 @@ if has("gui_macvim")
     set guifont=Menlo:h14
 endif
 
-filetype off
-
 " Load pathogen
-call pathogen#runtime_append_all_bundles()
-call pathogen#helptags()
+execute pathogen#infect()
 
 " Enable loading filetype and indentation plugins
 filetype plugin indent on
@@ -226,8 +223,6 @@ autocmd VimEnter * if !argc() | NERDTree | endif
 " Project
 let g:proj_flags="FisLt"
 let g:proj_window_width = 40
-" SnippetEmu
-" let g:snippetsEmu_key = "<C-j>"
 
 " Command-T Plugin
 let g:CommandTMaxHeight = 25
@@ -238,9 +233,9 @@ let g:gist_post_private = 1
 let g:gist_show_privates = 1
 
 " UltiSnips
-let g:UltiSnipsEditSplit="vertical"
-let g:UltiSnipsSnippetsDir="~/.vim/mydata/snippets"
-"let g:UltiSnipsExpandTrigger="<tab>"
+"let g:UltiSnipsEditSplit="vertical"
+"let g:UltiSnipsSnippetsDir="~/.vim/mydata/snippets"
+"let g:UltiSnipsExpandTrigger="<c-tab>"
 "let g:UltiSnipsJumpForwardTrigger="<c-n>"
 "let g:UltiSnipsJumpBackwardTrigger="<c-p>"
 
