@@ -148,7 +148,7 @@ set updatecount=50
 "
 " '20  - remember marks for 20 previous files
 " \"50 - save 50 lines for each register
-" :20  - remember 20 items in command-line history 
+" :20  - remember 20 items in command-line history
 " /20  - remember 20 items in search history
 " %    - remember the buffer list (if vim started without a file arg)
 " n    - set name of viminfo file
@@ -211,18 +211,24 @@ set tags+=$HOME/.vim/tags/python2.ctags
 " NERDTree
 let NERDTreeDirArrows=1
 let NERDTreeMinimalUI=1
-let NERDTreeIgnore=['\.pyc$', '\.php\~$']
+let NERDTreeIgnore=['\.o$', '\.pyc$', '\.php\~$']
 let NERDTreeWinSize = 35
 " Make sure that when NT root is changed, Vim's pwd is also updated
 let NERDTreeChDirMode = 2
 let NERDTreeShowLineNumbers = 1
 let NERDTreeAutoCenter = 1
+nmap <Leader>tree :NERDTreeToggle<CR>
 " Open NERDTree on startup, when no file has been specified
 autocmd VimEnter * if !argc() | NERDTree | endif
 
 " Project
 let g:proj_flags="FisLt"
 let g:proj_window_width = 40
+
+" Syntastic
+let g:syntastic_mode_map = { 'mode': 'active',
+                           \ 'active_filetypes': [],
+                           \ 'passive_filetypes': [] }
 
 " Command-T Plugin
 let g:CommandTMaxHeight = 25
@@ -273,7 +279,7 @@ autocmd InsertEnter * match ExtraWhitespace /\s\+\%#\@<!$/
 autocmd InsertLeave * match ExtraWhitespace /\s\+$/
 autocmd BufWinLeave * call clearmatches()
 " Remove trailing spaces
-au FileType vim,php,c,py,html,twig,yml,xml,js,md au BufWritePre *.php :%s/\s\+$//e
+au FileType vim,php,c,python,html,twig,yml,xml,js,md au BufWritePre *.* :%s/\s\+$//e
 
 
 "run file with PHP CLI (CTRL-M)
@@ -317,7 +323,7 @@ imap <Leader>r <C-^>
 nmap <Leader>r a<C-^><ESC>
 
 " Phrozn key
-nmap <Leader>phr :!phr-dev up .<CR>
+nmap <Leader>phr :!phr-dev up ./src .<CR>
 
 " Easy tab navigation
 map tn :tabnext<CR>
@@ -375,16 +381,16 @@ map <F7> :MarksBrowser<CR>
 imap <F7> <ESC>:MarksBrowser<CR>
 vmap <F7> <ESC>:MarksBrowser<CR>
 
-" " Open and close the taglist.vim separately 
+" " Open and close the taglist.vim separately
 map <F10> :TrinityToggleTagList<CR>
 imap <F10> <ESC>:TrinityToggleTagList<CR>
-nmap <F10>  <ESC>:TrinityToggleTagList<CR> 
+nmap <F10>  <ESC>:TrinityToggleTagList<CR>
 
-" " Open and close the NERD_tree.vim separately 
-nmap <F11>  :TrinityToggleNERDTree<CR> 
+" " Open and close the NERD_tree.vim separately
+nmap <F11>  :TrinityToggleNERDTree<CR>
 
-" Open and close all the three plugins on the same time 
-nmap <F12>  :TrinityToggleAll<CR> 
+" Open and close all the three plugins on the same time
+nmap <F12>  :TrinityToggleAll<CR>
 
 " Ability to open tag'ed document as vertical split
 " or a new tab
@@ -394,11 +400,11 @@ map <C-\> :tab split<CR>:exec("tag ".expand("<cword>"))<CR>
 
 " Allow to copy/paste between VIM instances
 "copy the current visual selection to ~/.vbuf
-vmap <Leader>y :w! ~/.vbuf<CR>      
+vmap <Leader>y :w! ~/.vbuf<CR>
 "copy the current line to the buffer file if no visual selection
-nmap <Leader>y :.w! ~/.vbuf<CR>     
+nmap <Leader>y :.w! ~/.vbuf<CR>
 "paste the contents of the buffer file
-nmap <Leader>p :r ~/.vbuf<CR>       
+nmap <Leader>p :r ~/.vbuf<CR>
 
 " save changes
 map <Leader>s :w<CR>
@@ -439,14 +445,14 @@ nmap <silent> <F6> :set number!<CR>
 " page down with <Space>
 " nmap <Space> <PageDown>
 " open filename under cursor in a new window (use current file's working
-" directory) 
+" directory)
 nmap gf :new %:p:h/<cfile><CR>
 " map <Alt-p> and <Alt-P> to paste below/above and reformat
 nnoremap <Esc>P  P'[v']=
 nnoremap <Esc>p  p'[v']=
 " visual shifting (does not exit Visual mode)
 vnoremap < <gv
-vnoremap > >gv 
+vnoremap > >gv
 " turn off search highlighting
 nmap <silent> <Leader>n :silent :nohlsearch<CR>
 
@@ -455,7 +461,7 @@ noremap <Leader>inc <C-A>
 
 map <Leader>cn :cn<CR>
 map <Leader>co <Esc>:call CompileRunGcc()<CR>
-map <Leader>m <Esc>:!clear && make && ./prog<CR>
+map <Leader>m <Esc>:!clear && make clean && make && ./randomstring<CR>
 func! CompileRunGcc()
     exec "w"
     exec "!clear && gcc -Wall -std=c99 -pedantic-errors % -o %< && echo '\\n--------------------------------------------\\n' && ./%<"
