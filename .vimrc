@@ -462,10 +462,13 @@ nmap <silent> <Leader>n :silent :nohlsearch<CR>
 
 " Make sure that CTRL-A (used by gnu screen) is redefined
 noremap <Leader>inc <C-A>
+nmap <Leader>sc :set scrolloff=1<CR>
+nmap <Leader>scc :set scrolloff=999<CR>
 
 map <Leader>cn :cn<CR>
 map <Leader>co <Esc>:call CompileRunGcc()<CR>
 map <Leader>m <Esc>:!clear && make clean && make && ./randomstring<CR>
+map <Leader>m <Esc>:!clear && make clean && make assignment5 && ./testdominion<CR>
 func! CompileRunGcc()
     exec "w"
     exec "!clear && gcc -Wall -std=c99 -pedantic-errors % -o %< && echo '\\n--------------------------------------------\\n' && ./%<"

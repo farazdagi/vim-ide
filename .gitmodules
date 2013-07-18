@@ -52,3 +52,6 @@
 [submodule "bundle/syntastic"]
 	path = bundle/syntastic
 	url = https://github.com/scrooloose/syntastic.git
+[submodule "bundle/simpledb"]
+	path = bundle/simpledb
+	url = https://github.com/ivalkeen/vim-simpledb
