@@ -55,3 +55,6 @@
 [submodule "bundle/simpledb"]
 	path = bundle/simpledb
 	url = https://github.com/ivalkeen/vim-simpledb
+[submodule "bundle/vim-signature"]
+	path = bundle/vim-signature
+	url = https://github.com/kshenoy/vim-signature
