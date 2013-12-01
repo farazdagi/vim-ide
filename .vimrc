@@ -5,8 +5,6 @@
 " Purge previous auto commands (in case vimrc is run twice)
 autocmd!
 
-
-
 " Load pathogen
 execute pathogen#infect()
 
@@ -34,6 +32,9 @@ highlight lCursor guifg=NONE guibg=#cae682
 
 " make sure that ZF standards for maximum line height are honoured
 set colorcolumn=80,120
+
+" Switch between the last two files
+nnoremap <leader><leader> <C-^>
 
 " enable new 7.3 persistent undo feature
 "set undofile
@@ -236,6 +237,8 @@ let g:syntastic_mode_map = { 'mode': 'active',
 
 " Command-T Plugin
 let g:CommandTMaxHeight = 25
+" never show auto-generated api-docs files
+set wildignore=api-docs/**,public/api-docs/**,app/cache/**,*.php~
 
 " Gist
 let g:gist_detect_filetype = 1
@@ -255,11 +258,6 @@ let g:gist_show_privates = 1
 let g:php_folding = 2
 set foldlevel=5
 
-"
-" Command-T
-"
-" never show auto-generated api-docs files
-set wildignore=api-docs/**,public/api-docs/**,app/cache/**,*.php~
 
 "
 " Large File
@@ -327,7 +325,8 @@ imap <Leader>r <C-^>
 nmap <Leader>r a<C-^><ESC>
 
 " Phrozn key
-nmap <Leader>phr :!phr-dev up ./src .<CR>
+nmap <Leader>phr :!phr up ./src .<CR>
+nmap <Leader>jek :!jekyll build<CR>
 
 " Easy tab navigation
 map tn :tabnext<CR>
@@ -379,6 +378,7 @@ map ]] ]c
 map [[ [c
 map <Leader>gdi :Gdiff<CR>
 map <Leader>gst :Gstatus<CR>
+map <Leader>dup :diffupdate<CR>
 
 " F8 See List of Bookmarks
 map <F7> :MarksBrowser<CR>
@@ -479,3 +479,14 @@ nmap <F8> :Cnext<CR>
 nmap <F10> :Cstep<CR>
 nmap <Leader>pep :!pep8 %<CR>
 nmap <Leader>x :TagbarToggle<CR>
+
+au FileType tex noremap <Leader>cur <ESC>:call LatexMakeCurrentFile()<CR><CR>
+func! LatexMakeCurrentFile()
+    exec ":silent !rm /home/victor/projects/zurich/latex/current.tex"
+    exec "!ln -s `pwd`/% /home/victor/projects/zurich/latex/current.tex"
+endfunc
+
+" Local config
+if filereadable($HOME . "/.vimrc.local")
+    source ~/.vimrc.local
+endif

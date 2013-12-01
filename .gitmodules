@@ -58,3 +58,12 @@
 [submodule "bundle/vim-signature"]
 	path = bundle/vim-signature
 	url = https://github.com/kshenoy/vim-signature
+[submodule "bundle/golang"]
+	path = bundle/golang
+	url = git@github.com:jnwhiteh/vim-golang.git
+[submodule "bundle/gocode"]
+	path = bundle/gocode
+	url = git@github.com:Blackrush/vim-gocode.git
+[submodule "bundle/vim-airline"]
+	path = bundle/vim-airline
+	url = https://github.com/bling/vim-airline
