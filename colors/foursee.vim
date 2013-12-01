@@ -33,7 +33,7 @@ hi Cursor           guifg=NONE    guibg=#656565 gui=none
 hi Normal           guifg=#f6f3e8 guibg=#242424 gui=none
 hi NonText          guifg=#808080 guibg=#303030 gui=none
 hi LineNr           guifg=#857b6f guibg=#000000 gui=none
-hi SignColumn       guifg=#857b6f guibg=#000000 gui=none
+hi SignColumn       guifg=#857b6f guibg=#262526 gui=none
 hi StatusLine       guifg=#f6f3e8 guibg=#444444 gui=italic
 hi StatusLineNC     guifg=#857b6f guibg=#444444 gui=none
 hi VertSplit        guifg=#444444 guibg=#444444 gui=none
