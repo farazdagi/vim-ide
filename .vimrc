@@ -46,9 +46,6 @@ set t_Co=256
 " make sure that mouse is enabled
 set mouse=a
 
-" vim-airline
-let g:airline_powerline_fonts = 1
-
 "
 " GLOBAL SETTINGS
 "
