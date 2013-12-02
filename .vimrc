@@ -225,7 +225,7 @@ let NERDTreeWinSize = 35
 let NERDTreeChDirMode = 2
 let NERDTreeShowLineNumbers = 1
 let NERDTreeAutoCenter = 1
-nmap <Leader>tree :NERDTreeToggle<CR>
+nmap <Leader>o :NERDTreeToggle<CR>
 " Open NERDTree on startup, when no file has been specified
 autocmd VimEnter * if !argc() | NERDTree | endif
 
