@@ -8,7 +8,7 @@ sudo apt-get install vim-runtime vim-common vim-gui-common vim-tiny curl exubera
 Clone the GIT repo to your HOME directory and go there
 cd ~/
 git clone https://github.com/farazdagi/vim-ide.git
-cd /vim-ide
+cd vim-ide
 
 Get latest GIT Submodule dependencies
 git submodule init
