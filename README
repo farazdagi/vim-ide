@@ -1,3 +1,5 @@
+**NOTE:** This repository is outdated and unsupported. Supported version can be found here https://github.com/farazdagi/vim-go-ide
+
 How to Install VIM-IDE in simple steps
 
 Note: This document assumes you have never installed or configured vim and that you are using Ubuntu. If you have already installed it please backup and rm your ~/.vim and ~/.vimrc file as it will be replaced by VIM-IDE.
